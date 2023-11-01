@@ -199,4 +199,39 @@
 
 # 8.Script Monitoring
 
+## Kodu göstererek senaryolarının nasıl çalıştığını açıklamalıdır.
+
+- `vim /usr/local/sbin/monitoring.sh`
+    - uname -a → sırasıyla şunları verir.. kernel, hostname, kernel ana dağıtım bilgisi, kernel versiyon, işlemcinin mimarı bilgileri, işletim sistemi bilgisi
+    - Cpu physical → işlemci
+    - vCpu → sanal işlemci
+    - CPU load → sanal makinenin en son açıldığı an
+    - Connexions TCP → ssh ile sunucuya bağlantı kuranların sayısı
+    - Free bellek hakkında bilgi, kullanılan alan, kapasite, boş alan vc… Free -m : mebi byte
+    - Awk komutu → grepe benzer şekilde örüntü temelli terama işlemi
+    - Top → sunucu hakkındaki anlık istatistikleri verir.
+
+## “Cron” nedir?
+
+- belirli işlerin zamanlarda tekrarlanarak yapılmasını bir otomasyona bağlayarak kolaylaştırır. Bir görevin ilerleyen zamanda tekrarlamak için komut verme işlemine cron denir
+- cron Job zamanlanmış bir görev anlamına gelir. ileri tarihli bir görevin bir seferlik veya belli aralıklarla tekrar ederek yapılmasını istiyorsak kullanılacak komut dosyası.
+
+## Sununucu başladığından itibaren her 10 dakikada bir çalışacak şekilde komut dosyasını nasıl kurduğu
+
+- `crontab -u root -e` (crontab’e -u → root olarak gir -e → editle)
+- `**/***** bash /usr/local/sbin/monitoring.sh  (*dakikası)(*saati)(*ayın günü)(*yılın ayı)(*haftanın günü)` ——> bu işlemi gerçekleştir ***örn: 34552 (5. Ayın beşinci günü ve her salısı saat 04:03’te)***
+
+## Komut dosyasının her dakika çalışmasını sağlamalıdır.
+
+- **/***** bash /usr/local/sbin/monitoring.sh.
+
+## Komut dosyasının çalışmasını durdur. Yeniden başlatman gerekicek.
+
+- `sudo systemctl status rcon` (cronun durumu hakkında bilgi)
+- `sudo systemctl stop cron` (durdurur ama reboot sonrası Active halinde çalışır çünkü enable)
+- `sudo systemctl disable cron`
+- `reboot`
+
+# /etc dosyası: etc dosyası ve alt dizinlerinde sistemle ilgili bütün konfigürasyon dosyaları bulunur.
+
 ## YAZMAYA ÜŞENDİM YAZARIM BİRAZDAN
