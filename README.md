@@ -233,5 +233,3 @@
 - `reboot`
 
 # /etc dosyası: etc dosyası ve alt dizinlerinde sistemle ilgili bütün konfigürasyon dosyaları bulunur.
-
-## YAZMAYA ÜŞENDİM YAZARIM BİRAZDAN
