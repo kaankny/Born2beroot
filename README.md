@@ -75,7 +75,7 @@
     - `sudo chage -l username` kurallara uyup uymadığını kontrol et
 - Kuralların nasıl değiştirildiğini açıklayın.
     - `sudo vim /etc/login.defs` (burada max days 30, min days 2, warm 7 olarak ayarlandı)
-    - `sudo vim /etc/security/pwdquality.conf` (katı kurallar şifre belirlemek için yüklediğimiz sudo apt install libpam-pwdquality komutuyla yüklediğimiz paketten sonra oluşan, katı şifreleme politikalarin belirleyen dosya) enforcing kısmı 0 ise şifre kurallara uymuyorsa uyarı verir ama şifreyi kabul eder.
+    - `sudo vim /etc/pam.d/common-password` (katı kurallar şifre belirlemek için yüklediğimiz sudo apt install libpam-pwdquality komutuyla yüklediğimiz paketten sonra oluşan, katı şifreleme politikalarin belirleyen dosya) enforcing kısmı 0 ise şifre kurallara uymuyorsa uyarı verir ama şifreyi kabul eder.
 - “değerlendirme” adında grup oluşturması ve kullanıcıya ataması
     - `addgroup <değerlendirme>` (grubu kur)
     - `cat /etc/group | grep değerlendirme` (kurulan grubu gör)
