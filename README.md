@@ -1,75 +1,47 @@
-<h1>Get Next Line</h1>
+<h1>Born2beRoot</h1>
 
 <h2>Project Overview</h2>
-<p>The <code>Get Next Line</code> project is about programming a function that returns a line read from a file descriptor. This project introduces the concept of static variables in C programming and aims to add a convenient function to your collection.</p>
+<p>The <code>Born2beRoot</code> project is a system administration exercise that involves setting up a server with specific requirements using virtualization software like VirtualBox or UTM.</p>
 
 <h2>Purpose</h2>
-<p>The purpose of this project is to implement a function named <code>get_next_line</code> that reads a line from a file descriptor and returns it. This function should handle multiple calls to read an entire file line by line and manage memory efficiently.</p>
+<p>The purpose of this project is to introduce you to virtualization and system administration. You will create a virtual machine, set up an operating system with specific configurations, and implement a secure server environment.</p>
 
 <h2>What You Will Learn</h2>
 <ul>
-    <li>How to use static variables in C.</li>
-    <li>How to read from file descriptors in a controlled manner.</li>
-    <li>How to handle memory allocation and deallocation properly.</li>
-    <li>How to implement a function that can manage state across multiple calls.</li>
+    <li>How to use virtualization software to create and manage virtual machines.</li>
+    <li>How to install and configure an operating system with specific security measures.</li>
+    <li>How to set up and manage server services like SSH and firewalls.</li>
+    <li>How to implement and enforce password policies and user permissions.</li>
 </ul>
 
 <h2>Project Contents</h2>
 
 <h3>Mandatory Part</h3>
-<p>You must implement the following function:</p>
+<p>You must set up a server with the following requirements:</p>
 <ul>
-    <li><code>get_next_line</code>: A function that reads a line from a file descriptor and returns it.</li>
-</ul>
-
-<h4>Function Prototype</h4>
-<p><code>char *get_next_line(int fd);</code></p>
-
-<h4>Parameters</h4>
-<ul>
-    <li><code>fd</code>: The file descriptor to read from.</li>
-</ul>
-
-<h4>Return Value</h4>
-<ul>
-    <li>The function returns the line read from the file descriptor.</li>
-    <li>If there is nothing else to read or if an error occurs, it returns <code>NULL</code>.</li>
-</ul>
-
-<h4>External Functions</h4>
-<p>You are allowed to use the following external functions:</p>
-<ul>
-    <li><code>read</code></li>
-    <li><code>malloc</code></li>
-    <li><code>free</code></li>
-</ul>
-
-<h4>Description</h4>
-<ul>
-    <li>Repeated calls to <code>get_next_line</code> should allow you to read a text file pointed to by the file descriptor, one line at a time.</li>
-    <li>The function should return the line that was read, including the terminating <code>\n</code> character, except if the end of file was reached and does not end with a <code>\n</code> character.</li>
-    <li>The header file <code>get_next_line.h</code> must at least contain the prototype of the <code>get_next_line</code> function.</li>
-    <li>Add any helper functions in <code>get_next_line_utils.c</code>.</li>
+    <li>Use VirtualBox or UTM for virtualization.</li>
+    <li>Install the latest stable version of Debian or Rocky as the operating system (Debian recommended for beginners).</li>
+    <li>Create at least 2 encrypted partitions using LVM.</li>
+    <li>Set up an SSH service running on port 4242, without allowing root login via SSH.</li>
+    <li>Configure a firewall (UFW for Debian, firewalld for Rocky) to leave only port 4242 open.</li>
+    <li>Set the hostname of your virtual machine to your login ending with 42 (e.g., wil42).</li>
+    <li>Implement a strong password policy with specific requirements (e.g., password expiration, minimum length, complexity).</li>
+    <li>Install and configure sudo with strict rules and logging.</li>
+    <li>Create a user with your login name, belonging to the user42 and sudo groups.</li>
+    <li>Create a monitoring script to display system information every 10 minutes.</li>
 </ul>
 
 <h3>Bonus Part</h3>
-<p>The bonus part includes additional features:</p>
+<p>The bonus part includes additional features to enhance your server setup:</p>
 <ul>
-    <li>Develop <code>get_next_line</code> using only one static variable.</li>
-    <li><code>get_next_line</code> should manage multiple file descriptors at the same time, maintaining the reading state for each.</li>
+    <li>Set up partitions to match a specific structure.</li>
+    <li>Set up a functional WordPress website with lighttpd, MariaDB, and PHP.</li>
+    <li>Set up an additional useful service of your choice (excluding NGINX/Apache2).</li>
 </ul>
-
-<h4>Bonus Files</h4>
-<ul>
-    <li><code>get_next_line_bonus.c</code></li>
-    <li><code>get_next_line_bonus.h</code></li>
-    <li><code>get_next_line_utils_bonus.c</code></li>
-</ul>
-
 <p>The bonus part will only be assessed if the mandatory part is perfect.</p>
 
 <h2>Usage</h2>
-<p>To use the <code>get_next_line</code> function, include the header file and call the function with a valid file descriptor. The function reads from the file descriptor and returns the next line each time it is called.</p>
+<p>After setting up your virtual machine and server, use the configured services and monitoring script to manage and monitor your server environment.</p>
 
 <h2>Conclusion</h2>
-<p>The <code>Get Next Line</code> project is a great opportunity to learn about static variables and file descriptor handling in C. By completing this project, you will enhance your ability to manage state across multiple function calls and improve your understanding of low-level file operations.</p>
+<p>The <code>Born2beRoot</code> project provides a comprehensive introduction to system administration and virtualization. By completing this project, you will gain valuable skills in setting up and securing a server, managing user permissions, and implementing monitoring and logging practices.</p>
